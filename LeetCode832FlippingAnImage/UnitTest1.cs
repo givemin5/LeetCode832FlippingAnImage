@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LeetCode832FlippingAnImage
@@ -26,9 +28,13 @@ namespace LeetCode832FlippingAnImage
                 new int[]{0, 1, 0},
                 new int[]{1, 1, 1}
             };
+            for (int i = 0; i < actual.Length; i++)
+            {
+                CollectionAssert.AreEqual(expected[i],actual[i]);
+            }
 
-            CollectionAssert.AreEqual(expected,actual);
-            
+            //CollectionAssert.AreEqual(expected,actual);
+            //Assert.IsTrue(expected.SequenceEqual(actual));
         }
     }
 }

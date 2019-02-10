@@ -10,7 +10,22 @@ namespace LeetCode832FlippingAnImage
     {
         public int[][] FlipAndInvertImage(int[][] A)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < A.Length; i++)
+            {
+                A[i] = A[i].Reverse().Select(x => Not(x)).ToArray();
+            }
+
+            return A;
+        }
+
+        private int Not(int x)
+        {
+            if (x == 0)
+            {
+                return 1;
+            }
+
+            return 0;
         }
     }
 }
